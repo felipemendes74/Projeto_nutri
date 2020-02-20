@@ -2,9 +2,9 @@ let pacientes = document.querySelectorAll(".paciente");
 
 pacientes.forEach(calcularImc);
 
-function    calcularImc(paciente){
-//for (var i = 0; i < pacientes.length; i++) {
-//    let paciente = pacientes[i];
+function calcularImc(paciente) {
+    //for (var i = 0; i < pacientes.length; i++) {
+    //    let paciente = pacientes[i];
 
     //console.error("vai trabalhar");
     const titulo = document.querySelector("#titulo");
@@ -20,7 +20,7 @@ function    calcularImc(paciente){
     let pesoValido = true;
     let alturaValido = true;
     let tdIMC = paciente.querySelector(".info-imc");
-    
+
     if (peso <= 0 || peso > 1000) {
         pesoValido = false;
         tdIMC.textContent = "Peso inválido";
@@ -38,4 +38,10 @@ function    calcularImc(paciente){
         //escrever o IMC na tabela
         tdIMC.textContent = imc.toFixed(2);
     }
+}
+
+let titulo = document.querySelector("#titulo");
+titulo.onclick = mostrarMensagem;
+function mostrarMensagem() {
+    console.log("Evento aconteu");
 }
